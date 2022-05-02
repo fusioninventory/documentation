@@ -1,0 +1,2 @@
+# prevent any eol normalization
+*.vbs -text

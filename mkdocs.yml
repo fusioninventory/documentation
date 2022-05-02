@@ -1,0 +1,54 @@
+site_name: FusionInventory documentation
+site_url: https://fusioninventory.org/documentation
+
+repo_name: fusioninventory/documentation
+repo_url: 'https://github.com/fusioninventory/documentation'
+
+copyright: Copyright © Fusioninventory 2022
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      baselevel: 1
+      toc_depth: 5
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - attr_list
+  - footnotes
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+extra:
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://fusioninventory.org/
+      name: Website
+    - icon: fontawesome/brands/github
+      link: https://github.com/fusioninventory
+      name: FusionInventory on GitHub
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/Kj72FwAKTC
+      name: FusionInventory on Discord
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/channel/UClK5zin1sdONo2_P2fVuFKg
+      name: FusionInventory on Youtube
+
+theme:
+  name: material
+  features:
+    - navigation.top
+    - content.code.annotate # (1)
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+
+extra_css:
+  - stylesheets/extra.css

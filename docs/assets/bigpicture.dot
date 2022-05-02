@@ -1,0 +1,278 @@
+# ------------------------------------------------------------------------
+# FusionInventory
+# Copyright (C) 2010-2017 by the FusionInventory Development Team
+#
+# http://www.fusioninventory.org/   http://fusioninventory.org/
+# ------------------------------------------------------------------------
+#
+# @file      bigpicture.dot
+# @author    Tomas Abad <tabadgp@gmail.com>
+# @copyright Copyright (c) 2010-2017 FusionInventory Team
+# @license   Creative Commons
+#            Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+#            https://creativecommons.org/licenses/by-sa/4.0/
+# @since     2017
+#
+# ------------------------------------------------------------------------
+
+#
+# Graphviz - Graph Visualization Software - http://www.graphviz.org/
+#
+# $ dot -Tpng -o bigpicture.png bigpicture.dot
+# $ _
+#
+
+digraph G {
+   rankdir=LR;
+
+   label = "The (new) Big Picture of FusionInventory\n\
+            Copyright (c) 2010-2017 FusionInventory Team | Tomás Abad <tabadgp@gmail.com>\n\
+            This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International\n\
+            (CC BY-SA 4.0)"
+
+   graph [style="filled,solid" fontsize=14 fontname="Verdana" colorscheme="greys9" color=5 fillcolor=2 compound=true];
+   node [shape=box style=filled fontname="Verdana" colorscheme=rdylgn6 color=black fillcolor=4];
+
+   subgraph cluster_known_ethernet_devices {
+      color = 7;
+      fillcolor = 1;
+      style = "filled,dotted";
+
+      labelloc = top;
+      labeljust = left;
+      label = "Known Ethernet Devices\n(NetDiscovery is able to detect Manufacturer, Model, Serial Number, etc. by SNMP)";
+
+      known_ups_eth_1 [label="UPS #n"];
+      known_phone_eth_1 [label="Phone #n"];
+      known_switch_eth_1 [label="Switch #n"];
+      known_printer_eth_1 [label="Printer #n"];
+      known_load_balancer_eth_1 [label="Load Balancer #n"];
+
+      known_ups_eth_1 -> known_phone_eth_1 [style=invis];
+      known_switch_eth_1 -> known_printer_eth_1 [style=invis];
+   }  // cluster_known_ethernet_devices
+
+   subgraph cluster_unknown_ethernet_devices {
+      color = 7;
+      fillcolor = 1;
+      style = "filled,dotted";
+
+      labelloc = top;
+      labeljust = left;
+      label = "Unknown Ethernet Devices\n(NetDiscovery is NOT able to detect any information by SNMP)";
+
+      unknown_ups_eth_1 [label="UPS #n"];
+      unknown_phone_eth_1 [label="Phone #n"];
+      unknown_switch_eth_1 [label="Switch #n"];
+      unknown_printer_eth_1 [label="Printer #n"];
+      unknown_load_balancer_eth_1 [label="Load Balancer #n"];
+
+      unknown_ups_eth_1 -> unknown_phone_eth_1 [style=invis];
+      unknown_switch_eth_1 -> unknown_printer_eth_1 [style=invis];
+   }  // cluster_unknown_ethernet_devices
+
+   subgraph cluster_computer {
+      labelloc = top;
+      labeljust = left;
+      label = "Computer (Windows, macOS, GNU/Linux, BSD, ...)";
+
+      subgraph cluster_information_sources {
+         color = 7;
+         style = "filled,dotted";
+
+         labelloc = top;
+         labeljust = left;
+         label = "Sources of Information\n(Depending on Operating System)";
+
+         pciid [label="PCI ID Dabatase"];
+         usbid [label="USB ID Database"];
+         reg [label="Windows Registry"];
+         wmi [label="Windows Management Instrumentation (WMI)"];
+         rpm [label="RPM Package Manager (RPM)"];
+         dpkg [label="Debian Package Manager (dpkg)"];
+         dmi [label="Desktop Management Interface (DMI) /\nSystem Management BIOS (SMBIOS)"];
+         containers [label="Virtualization Containers\n(LXC, LXD, Docker, Virtuozo, FreeBSD Jails, VServer, ...)"];
+         hypervisors [label="Virtualization Hypervisors\n(XEN, VMware, Hyper-V, OpenVM, QEMU, Parallels, VirtualBox, ...)"];
+         other_information_sources [label="...\n(Other Sources of Information)"];
+      }  // cluster_information_sources
+
+      subgraph cluster_fia {
+         fillcolor = 3;
+
+         labelloc = top;
+         labeljust = left;
+         label = "FusionInventory-Agent (FIA)";
+
+         node [fillcolor=3];
+
+         fia_core [label="FIA Core"];
+
+         subgraph cluster_fia_modules {
+            fillcolor = 4;
+
+            labelloc = top;
+            labeljust = left;
+            label = "Modules";
+
+            fia_esx [label="ESX"];
+            fia_wmi [label="Wmi"];
+            fia_deploy [label="Deploy"];
+            fia_collect [label="Collect"];
+            fia_inventory [label="Inventory"];
+            fia_wakeonlan [label="WakeOnLan"];
+            fia_netdiscovery [label="NetDiscovery"];
+            fia_netinventory [label="NetInventory"];
+         }
+
+         fia_esx -> fia_core [dir=none];
+         fia_wmi -> fia_core [dir=none];
+         fia_deploy -> fia_core [dir=none];
+         fia_collect -> fia_core [dir=none];
+         fia_inventory -> fia_core [dir=none];
+         fia_wakeonlan -> fia_core [dir=none];
+         fia_netdiscovery -> fia_core [dir=none];
+         fia_netinventory -> fia_core [dir=none];
+      }  // cluster_fia
+
+      subgraph cluster_deploy_executions {
+         color = 7;
+         style = "filled,dotted";
+
+         labelloc = top;
+         labeljust = left;
+         label = "Deploy Executions";
+
+         local_executions [label="Programs, Scripts, Commands, ...\n(Actually in the Operating System)"];
+         remote_executions [label="Packages Received from FI4G\n(Programs, Scripts, Commands, ...)"];
+      }  // cluster_deploy_executions
+
+      wmi -> fia_wmi [dir=none];
+      reg -> fia_wmi [dir=none];
+      containers -> fia_inventory [ltail=cluster_information_sources dir=none];
+      local_executions -> fia_deploy [ltail=cluster_deploy_executions dir=none];
+   }  // cluster_computer
+
+   subgraph cluster_vmware_esxi_cluster {
+      labelloc = top;
+      labeljust = center;
+      label = "VMware ESXi Cluster";
+
+      subgraph cluster_vmware_esxi_1 {
+         fillcolor = 3;
+
+         labelloc = top;
+         labeljust = right;
+         label = "VMware ESXi Server";
+
+         vmware_esxi_1_vm_1 [label="VM #11\n(vCenter)"];
+         vmware_esxi_1_vm_2 [label="VM #12"];
+         vmware_esxi_1_vm_n [label="VM #1n"];
+         vmware_esxi_1_api [label="VMware API"];
+
+         vmware_esxi_1_vm_1 -> vmware_esxi_1_vm_2 -> vmware_esxi_1_vm_n [style=invis];
+      }  // cluster_vmware_esxi_1
+
+      subgraph cluster_vmware_esxi_2 {
+         fillcolor = 3;
+
+         labelloc = top;
+         labeljust = right;
+         label = "VMware ESXi Server";
+
+         vmware_esxi_2_vm_1 [label="VM #21"];
+         vmware_esxi_2_vm_2 [label="VM #22"];
+         vmware_esxi_2_vm_n [label="VM #2n"];
+         vmware_esxi_2_api [label="VMware API"];
+
+         vmware_esxi_2_vm_1 -> vmware_esxi_2_vm_2 -> vmware_esxi_2_vm_n [style=invis];
+      }  // cluster_vmware_esxi_2
+
+      vmware_esxi_1_vm_1 -> vmware_esxi_1_api [dir=none];
+      vmware_esxi_1_vm_1 -> vmware_esxi_2_api [dir=none];
+   }  // cluster_vmware_esxi_cluster
+
+   subgraph cluster_vmware_esxi_3 {
+      labelloc = top;
+      labeljust = right;
+      label = "VMware ESXi Server";
+
+      vmware_esxi_3_vm_1 [label="VM #31"];
+      vmware_esxi_3_vm_2 [label="VM #32"];
+      vmware_esxi_3_vm_n [label="VM #3n"];
+      vmware_esxi_3_api [label="VMware API"];
+
+      vmware_esxi_3_vm_1 -> vmware_esxi_3_vm_2 -> vmware_esxi_3_vm_n [style=invis];
+   }  // cluster_vmware_esxi_3
+
+   subgraph cluster_itasm_server {
+      fillcolor = 2;
+
+      labelloc = bottom;
+      labeljust = left;
+      label = "IT Assets and Services Management Server";
+
+      httpd_server [label="HTTPd Server"];
+
+      subgraph cluster_glpi {
+         fillcolor = 3;
+
+         labelloc = bottom;
+         labeljust = left;
+         label = "GLPI";
+
+         glpi_core [label="GLPI Core"];
+
+         subgraph cluster_glpi_plugins {
+            fillcolor = 4;
+
+            labelloc = bottom;
+            labeljust = left;
+            label = "Plugins";
+
+            fi4g [label="FusionInventory for GLPI (FI4G)" fillcolor=3];
+            data_injection [label="Data Injection"];
+            purge_logs [label="Purge Logs"];
+            sim_card [label="SIM Card"];
+            other_glpi_plugin [label="..."];
+         }  //cluster_glpi_plugins
+
+         glpi_core -> fi4g [dir=none];
+         glpi_core -> data_injection [dir=none];
+         glpi_core -> purge_logs [dir=none];
+         glpi_core -> sim_card [dir=none];
+         glpi_core -> other_glpi_plugin [dir=none];
+      }  // cluster_glpi
+
+      httpd_server -> glpi_core [dir=none];
+   }  // cluster_itams_server
+
+   subgraph cluster_database_server {
+      fillcolor = 2;
+
+      labelloc = top;
+      labeljust = left;
+      label = "Database Server";
+
+      subgraph cluster_mysql {
+         fillcolor = 3;
+
+         labelloc = top;
+         labeljust = left;
+         label = "MySQL/MariaDB Engine";
+
+         db [label="GLPI Database"];
+      }
+   }  // cluster_database_server
+
+   db -> glpi_core [dir=none];
+
+   fi4g -> fia_core [dir=none];
+
+   fia_esx -> vmware_esxi_1_vm_1 [dir=none];
+   fia_esx -> vmware_esxi_3_api [dir=none];
+
+   known_printer_eth_1 -> fia_netdiscovery [ltail=cluster_known_ethernet_devices dir=none];
+   known_printer_eth_1 -> fia_netinventory [ltail=cluster_known_ethernet_devices dir=none];
+
+   unknown_printer_eth_1 -> fia_netdiscovery [ltail=cluster_unknown_ethernet_devices dir=none];
+}right  // G
