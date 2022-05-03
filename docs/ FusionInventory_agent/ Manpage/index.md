@@ -1,21 +1,16 @@
----
-layout: single
-title: Agent man pages
-redirect_from:
- - /documentation/agent/man.html
----
+# Agent man pages
 
-# Executables
+## Executables
 
-* [fusioninventory-agent](fusioninventory-agent.html)
-* [fusioninventory-esx](fusioninventory-esx.html)
-* [fusioninventory-injector](fusioninventory-injector.html)
-* [fusioninventory-inventory](fusioninventory-inventory.html)
-* [fusioninventory-netdiscovery](fusioninventory-netdiscovery.html)
-* [fusioninventory-netinventory](fusioninventory-netinventory.html)
-* [fusioninventory-wakeonlan](fusioninventory-wakeonlan.html)
-* [fusioninventory-win32-service](fusioninventory-win32-service.html)
+* [fusioninventory-agent](fusioninventory-agent.md)
+* [fusioninventory-esx](fusioninventory-esx.md)
+* [fusioninventory-injector](fusioninventory-injector.md)
+* [fusioninventory-inventory](fusioninventory-inventory.md)
+* [fusioninventory-netdiscovery](fusioninventory-netdiscovery.md)
+* [fusioninventory-netinventory](fusioninventory-netinventory.md)
+* [fusioninventory-wakeonlan](fusioninventory-wakeonlan.md)
+* [fusioninventory-win32-service](fusioninventory-win32-service.md)
 
-# Configuration
+## Configuration
 
-* [agent.cfg](agent.cfg.html)
+* [agent.cfg](agent.cfg.md)

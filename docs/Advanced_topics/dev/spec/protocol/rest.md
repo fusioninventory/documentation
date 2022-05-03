@@ -1,9 +1,4 @@
----
-layout: single
-title: Agent/server communication protocol
----
-
-#  agent/server protocol
+# Agent/server communication protocol
 
 ##  The disadvantage of the current situation
 
@@ -152,7 +147,7 @@ The module works this way:
 We use the OCS/XML backend in these cases:
 
 * If the /config gives an errro (HTTP code != 200).
-*If inventory is not in the list returned by inventory
+* If inventory is not in the list returned by inventory
 
 ##  Example
 

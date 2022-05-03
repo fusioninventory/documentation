@@ -1,9 +1,4 @@
----
-layout: single
-title: Specs for POIP
----
-
-# SNMP + HTTPXML
+# Specs for POIP: SNMP + HTTPXML
 
 ## Goal
 
@@ -26,47 +21,51 @@ We must get datas in XML from http. links are :
 
 ## DeviceInformationX
 
-    <?xml version="1.0" encoding="iso-8859-1"?>
-    <DeviceInformation>
-       <MACAddress>0003E369A125</MACAddress>
-       <HostName>SEP0003E369A125</HostName>
-       <phoneDN>5920</phoneDN>
-       <appLoadID>P00308010200</appLoadID>
-       <bootLoadID>PC03A300</bootLoadID>
-       <versionID>8.1(2.0)</versionID>
-       <DSPLoadID>4.0(5.0)[A0]</DSPLoadID>
-       <addonModule1></addonModule1>
-       <addonModule2></addonModule2>
-       <hardwareRevision>1.0</hardwareRevision>
-       <serialNumber>INMXXXXXXX</serialNumber>
-       <modelNumber>CP-7940</modelNumber>
-       <Codec>ADLCodec</Codec>
-       <Amps>3V Amp</Amps>
-       <C3PORevision>2</C3PORevision>
-       <MessageWaiting> OUI</MessageWaiting>
-    </DeviceInformation>
+``` xml
+<?xml version="1.0" encoding="iso-8859-1"?>
+<DeviceInformation>
+    <MACAddress>0003E369A125</MACAddress>
+    <HostName>SEP0003E369A125</HostName>
+    <phoneDN>5920</phoneDN>
+    <appLoadID>P00308010200</appLoadID>
+    <bootLoadID>PC03A300</bootLoadID>
+    <versionID>8.1(2.0)</versionID>
+    <DSPLoadID>4.0(5.0)[A0]</DSPLoadID>
+    <addonModule1></addonModule1>
+    <addonModule2></addonModule2>
+    <hardwareRevision>1.0</hardwareRevision>
+    <serialNumber>INMXXXXXXX</serialNumber>
+    <modelNumber>CP-7940</modelNumber>
+    <Codec>ADLCodec</Codec>
+    <Amps>3V Amp</Amps>
+    <C3PORevision>2</C3PORevision>
+    <MessageWaiting> OUI</MessageWaiting>
+</DeviceInformation>
+```
 
 ## EthernetInformationX
 
-    <?xml version="1.0" encoding="iso-8859-1"?>
-    <EthernetInformation>
-       <TxExcessiveCollisions>0</TxExcessiveCollisions>
-       <TxFrames>2732807</TxFrames>
-       <TxBroadcasts>7944</TxBroadcasts>
-       <TxMulticasts>169287</TxMulticasts>
-       <TxCollisions>0</TxCollisions>
-       <TxDeferredAbort>0</TxDeferredAbort>
-       <RxOverruns>0</RxOverruns>
-       <RxLongCRC>0</RxLongCRC>
-       <RxFrames>3837371</RxFrames>
-       <RxCRCErrors>0</RxCRCErrors>
-       <RxBadPreamble>0</RxBadPreamble>
-       <RxRunt>0</RxRunt>
-       <RxMulticasts>151066</RxMulticasts>
-       <RxBroadcasts>1424370</RxBroadcasts>
-       <RxShorts>0</RxShorts>
-       <RxLongs>0</RxLongs>
-    </EthernetInformation>
+``` xml
+<?xml version="1.0" encoding="iso-8859-1"?>
+<EthernetInformation>
+    <TxExcessiveCollisions>0</TxExcessiveCollisions>
+    <TxFrames>2732807</TxFrames>
+    <TxBroadcasts>7944</TxBroadcasts>
+    <TxMulticasts>169287</TxMulticasts>
+    <TxCollisions>0</TxCollisions>
+    <TxDeferredAbort>0</TxDeferredAbort>
+    <RxOverruns>0</RxOverruns>
+    <RxLongCRC>0</RxLongCRC>
+    <RxFrames>3837371</RxFrames>
+    <RxCRCErrors>0</RxCRCErrors>
+    <RxBadPreamble>0</RxBadPreamble>
+    <RxRunt>0</RxRunt>
+    <RxMulticasts>151066</RxMulticasts>
+    <RxBroadcasts>1424370</RxBroadcasts>
+    <RxShorts>0</RxShorts>
+    <RxLongs>0</RxLongs>
+</EthernetInformation>
+```
 
 ## server HTTP headers
 

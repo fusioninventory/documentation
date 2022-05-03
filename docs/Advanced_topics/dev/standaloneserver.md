@@ -1,7 +1,4 @@
----
-layout: single
-title: Standalone server
----
+# Standalone server
 
 Standalone server
 

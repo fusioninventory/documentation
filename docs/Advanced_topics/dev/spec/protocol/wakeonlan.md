@@ -1,13 +1,10 @@
----
-layout: single
-title: Wake-on-lan protocol
----
-
 # Wake-on-lan protocol
 
-## Server to agent message
+## Wake-on-lan protocol
 
-### Specification
+### Server to agent message
+
+#### Specification
 
     {
         'id': ''string'',
@@ -22,7 +19,7 @@ title: Wake-on-lan protocol
         ]
     }
 
-### Example
+#### Example
 
     {
         'id': 'job1',
@@ -41,6 +38,6 @@ title: Wake-on-lan protocol
         ]
     }
 
-## Agent to server message
+### Agent to server message
 
 No message.

@@ -1,11 +1,6 @@
----
-layout: single
-title: FusionInventory agent Microsfot Windows installer
----
+# FusionInventory agent Microsfot Windows installer
 
-# FusionInventory Agent Microsoft Windows Installer
 
----
 
 ## Description
 
@@ -499,11 +494,6 @@ With the new Strawberry Perl Portable Edition Package for FusionInventory Agent 
 <http://lists.alioth.debian.org/mailman/listinfo/fusioninventory-devel>
 * Translator list  
 <http://lists.alioth.debian.org/mailman/listinfo/fusioninventory-i18n>
-
-### Project IRC channel
-* *#FusionInventory* on [FreeNode](http://irc.freenode.net/) IRC Network
-
-Please report any issues on project forge bugtracker (see forge URL above).
 
 
 ## Repositories

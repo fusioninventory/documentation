@@ -1,9 +1,7 @@
 # Installation on Windows
 
 !!! warning
-    Since 2.3.x release, FusionInventory Agent comes with a *new* Microsoft Windows installer. The documentation you have below concerns this new installer. If you are looking for documentation on FusionInventory Agent 2.2.x (or earlier) and its installer, see link.
-
-You can find [documentation on FusionInventory Agent 2.2.x](archive/windows_before_2.3.0.md).
+    Since 2.3.x release, FusionInventory Agent comes with a *new* Microsoft Windows installer. The documentation you have below concerns this new installer. If you are looking for documentation on FusionInventory Agent 2.2.x (or earlier) and its installer, see [documentation on FusionInventory Agent 2.2.x](archive/windows_before_2.3.0.md).
 
 
 ## Get the Installer
@@ -47,7 +45,7 @@ The old versions can be found [here](http://forge.fusioninventory.org/projects/f
 
 
 
-You can find the [manual of the FusionInventory Agent installer for Microsoft Windows]({{ site.baseurl }}/documentation/agent/installation/windows/windows-installer-2.3.x-command-line.html).
+You can find the [manual of the FusionInventory Agent installer for Microsoft Windows](./windows-installer-2.3.x-command-line.md).
 
 
 
@@ -60,8 +58,8 @@ The manual is contained within the installer. You can get it in one of the follo
 
 * `C:\> fusioninventory-agent_windows-<platform>_<version>.exe /help /S`
 
-
-{% include info.html param="It's recommended that you read through this documentation each time a new version is released; the new FusionInventory Agent installer for Microsoft Windows is still young and it's in constant development, including its manual." %}
+!!! info
+    It's recommended that you read through this documentation each time a new version is released; the new FusionInventory Agent installer for Microsoft Windows is still young and it's in constant development, including its manual.
 
 
 ## Installation from Command Line and Silent Installation
@@ -88,7 +86,7 @@ The fields and controls that appear in the *visual mode* installation are strict
 
 
 
-For more information about the *visual mode* installation, please, see the following gallery of [commented screenshots of FusionInventory Agent installer for Microsoft Windows]({{ site.baseurl }}/documentation/agent/installation/windows/windows-installer-2.3.x-visual-mode.html). (*still under construction*)
+For more information about the *visual mode* installation, please, see the following gallery of [commented screenshots of FusionInventory Agent installer for Microsoft Windows](./windows-installer-2.3.x-visual-mode.md). (*still under construction*)
 
 
 

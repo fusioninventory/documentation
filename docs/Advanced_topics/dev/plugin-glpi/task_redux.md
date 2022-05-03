@@ -1,9 +1,6 @@
----
-layout: single
-title: Fusioninventory Plugin for GLPI - Tasks Redux
----
+# Fusioninventory Plugin for GLPI - Tasks Redux
 
-# Tasks redux : objectives
+## Tasks redux : objectives
 
 This page aims to gather objectives .
 
@@ -12,16 +9,18 @@ This page aims to gather objectives .
   mReporting optional plugin)
 * Rework task summary categories and layout
 
-{% include info.html param="**TODO** We welcome any mockup and propositions." %}
+!!! info
+    **TODO** We welcome any mockup and propositions.
 
 * Add history log on tasks.
 
 * Externalize taskjobs reports in an independant page and base the display of
   this page on what have been done with the Deploy reports status
 
-{% include info.html param="**TODO**<br /><br />Add some mockup within this page or linked to another page if there are too many elements that makes this page unreadable." %}
+!!! info
+    **TODO**<br /><br />Add some mockup within this page or linked to another page if there are too many elements that makes this page unreadable.
 
-## Multi TaskJob sequencing
+### Multi TaskJob sequencing
 
 Up until 0.83, there was some sequencing facility with the original tabbed Task interface.
 
@@ -33,9 +32,9 @@ The following mockup show some way to achieve this :
 
 ![](../../../assets/dev/plugin-glpi/multijob-tasks-reborn.png)
 
-## Task planification
+### Task planification
 
-### server-driven mode (legacy)
+#### server-driven mode (legacy)
 
 Taskjobs are generated like in previous version but Task and TaskJobs are created
 and managed separately.
@@ -64,9 +63,10 @@ and managed separately.
             * at t+2h, [Deploy 2] is generated and ready to be executed by the
             agents.
 
-{% include info.html param="**TODO**<br /><br />* Explain in detail the delay time.<br />* Maybe we can use some sort of maximum duration in addition to the delay a task in order to limit usage on certain time slots." %}
+!!! info
+    **TODO**<br /><br />* Explain in detail the delay time.<br />* Maybe we can use some sort of maximum duration in addition to the delay a task in order to limit usage on certain time slots.
 
-### agent-driven mode (ondemand)
+#### agent-driven mode (ondemand)
 
 TaskJobs are produced more like an on-demand service:
 
@@ -83,53 +83,52 @@ TaskJobs are produced more like an on-demand service:
 
     <INT:task_id> | <TINYINT:weekday_number> | <TINYINT:hour_start> | <TINYINT:hour_end>
 
-Example:
-
-    #Monday(0), between 0:00 and 7:00
+!!! example
+    \#Monday(0), between 0:00 and 7:00
     12345 |  0 |  0 |  7
-    #Monday(0), between 19:00 and 0:00
+    \#Monday(0), between 19:00 and 0:00
     12345 |  0 | 19 | 24
 
-    #Tuesday(1), between 0:00 and 4:00
+    \#Tuesday(1), between 0:00 and 4:00
     12345 |  1 |  0 |  4
-    #Tuesday(1), between 6:00 and 10:00
+    \#Tuesday(1), between 6:00 and 10:00
     12345 |  1 |  6 | 10
-    #Tuesday(1), between 12:00 and 16:00
+    \#Tuesday(1), between 12:00 and 16:00
     12345 |  1 | 12 | 16
-    #Tuesday(1), between 19:00 and 0:00
+    \#Tuesday(1), between 19:00 and 0:00
     12345 |  1 | 19 | 23
 
-    #Wednesday(2), between 12:00 and 15:00
+    \#Wednesday(2), between 12:00 and 15:00
     12345 |  2 | 12 | 15
 
-    #Thursday(3), between 8:00 and 12:00
+    \#Thursday(3), between 8:00 and 12:00
     12345 |  3 |  8 | 12
 
-    #Friday(4), between 12:00 and 14:00
+    \#Friday(4), between 12:00 and 14:00
     12345 |  4 | 12 | 14
 
-    #Friday(5), all day long
+    \#Friday(5), all day long
     12345 |  5 |  0 | 24
 
-    #Sunday(6), all day long
+    \#Sunday(6), all day long
     12345 |  6 |  0 | 24
 
-## Taskjob Statuses
+### Taskjob Statuses
 
-### legacy
+#### legacy
 
 * **PREPARED** : server just create the TaskJob
 * **RUNNING**  : some agent gets its corresponding TaskJob
 * **FINISHED** : the agent has completed its TaskJob without error
 * **INERROR**  : the agent encountered some issues and stop the TaskJob with errors or TaskJob's timeout occured (crontask > 2h)
 
-### on-demand
+#### on-demand
 
 * **RUNNING**  : some agent gets its corresponding TaskJob
 * **FINISHED** : the agent has completed its TaskJob without error
 * **INERROR**  : the agent encountered some issues and stop the TaskJob with errors or TaskJob's timeout occured (crontask > 2h)
 
-## Monitoring / Logs
+### Monitoring / Logs
 
 * Enhance summary view with tasks related status informations like number of
 discovered/inventoried devices (cf. NetDiscovery or NetInventory status) or the
@@ -162,7 +161,8 @@ following format :
 
 * Selecting a task will switch to a more detailed view with advanced logs (jobstates filtered by the currently selected task id)
 
-## Reporting
+### Reporting
 
-{% include info.html param="**TODO**<br /><br />* Define some use case reports for each tasks." %}
+!!! info
+    **TODO**<br /><br />* Define some use case reports for each tasks.
 

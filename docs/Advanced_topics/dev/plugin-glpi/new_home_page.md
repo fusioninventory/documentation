@@ -1,7 +1,4 @@
----
-layout: single
-title: New home page
----
+# New home page
 
 When we go in menu Plugins > FusionInventory, we have removed the wizzard. So an idea is to have general a dashbard of FusionInventory.
 

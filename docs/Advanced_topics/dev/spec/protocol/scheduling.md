@@ -1,9 +1,4 @@
----
-layout: single
-title: Task scheduling protocol
----
-
-#  Task scheduling protocol
+# Task scheduling protocol
 
 ## Agent request
 

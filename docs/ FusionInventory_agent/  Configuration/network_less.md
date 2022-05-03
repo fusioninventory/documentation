@@ -1,4 +1,4 @@
-# Compoter without network connection
+# Without network connection
 
 
 ## Do inventory locally

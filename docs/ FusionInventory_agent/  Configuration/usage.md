@@ -62,7 +62,7 @@ On the downside, this mode involves having a Perl interpreter loaded in memory
 permanently, which is insignificant on any modern desktop, but may eventually
 be a concern in specific memory-constraints scenario, such as IoT or minimal
 virtual machines. It also involves having a privileged process listening on a
-network port, unless run with [**no-httpd** configuration directive](man/agent.cfg).
+network port, unless run with [**no-httpd** configuration directive](../ Manpage/agent.cfg.md).
 
 And the more important: who controls the GLPI servers also controls all assets
 where an agent is installed, with ability to execute code at anytime, which may

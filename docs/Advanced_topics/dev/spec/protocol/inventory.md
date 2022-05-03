@@ -1,48 +1,42 @@
----
-layout: single
-title: Inventory protocol
----
-
 # Inventory protocol
 
 ## Server to agent message
 
 ### Specification
 
-```json
+``` json
 {
-     "id": "string",
-     "type": "inventory",
-     "scan-homedirs": "boolean",
-     "scan-profiles": "boolean",
-     "timeout": "integer",
-     "no-category": [
-          "string",
-          "string",
-          ...
-     ],
-     "additional-content": "string"
+  "id": "string",
+  "type": "inventory",
+  "scan-homedirs": "boolean",
+  "scan-profiles": "boolean",
+  "timeout": "integer",
+  "no-category": [
+    "string",
+    "string",
+    ...
+  ],
+  "additional-content": "string"
 }
 ```
 
-### Example
-
-```json
-{
-     "id": "job1",
-     "type": "inventory",
-     "scan-homedirs": "true",
-     "scan-profiles": "false",
-     "timeout": 15,
-     "no-category": [ "printer" ]
-}
-```
+!!! example
+    ``` json
+    {
+      "id": "job1",
+      "type": "inventory",
+      "scan-homedirs": "true",
+      "scan-profiles": "false",
+      "timeout": 15,
+      "no-category": [ "printer" ]
+    }
+    ```
 
 ## Agent to server message
 
 ### Specification
 
-```dtd
+``` xml
 <!ELEMENT REQUEST (CONTENT, DEVICEID, QUERY)>
 
   <!ELEMENT CONTENT (ACCESSLOG, BIOS, HARDWARE, OPERATINGSYSTEM, ANTIVIRUS+,
@@ -637,7 +631,7 @@ title: Inventory protocol
        <!ELEMENT COMMENTS (#PCDATA)>
        <!ELEMENT FILESIZE (#PCDATA)>
        <!ELEMENT FOLDER (#PCDATA)>
-       <!-- information source, ie 'registry', 'rpm', 'deb', etc. ->
+       <!-- information source, ie 'registry', 'rpm', 'deb', etc. -->
        <!ELEMENT FROM (#PCDATA)>
        <!ELEMENT HELPLINK (#PCDATA)>
        <!-- installation date, in DD/MM/YYYY format -->
@@ -878,14 +872,13 @@ title: Inventory protocol
   <!ELEMENT QUERY (#PCDATA)>
 ```
 
-### Example
-
-```xml
-<?xml version="1.0" encoding="UTF-8" ?>
-<REQUEST>
-  <CONTENT>
-  </CONTENT>
-  <DEVICEID>beria-2012-08-02-20-50-16</DEVICEID>
-  <QUERY>INVENTORY</QUERY>
-</REQUEST>
-```
+!!! example
+    ```xml
+    <?xml version="1.0" encoding="UTF-8" ?>
+    <REQUEST>
+      <CONTENT>
+      </CONTENT>
+      <DEVICEID>beria-2012-08-02-20-50-16</DEVICEID>
+      <QUERY>INVENTORY</QUERY>
+    </REQUEST>
+    ```

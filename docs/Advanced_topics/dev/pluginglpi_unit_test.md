@@ -1,11 +1,9 @@
----
-layout: single
-title: Run unit tests for plugin FusionInventory for GLPI
----
+# Run unit tests for plugin FusionInventory for GLPI
 
 How to run unit tests for plugin FusionInventory for GLPI
 
-# Preprare installation
+## Preprare installation
+
 1. Have a glpi installation
 2. URL to access this specific GLPI must be **http://127.0.0.1/fusion0.84** for version 0.84 of the plugin
 3. Put plugin FusionInventory in glpi/plugins like standard install
@@ -13,6 +11,9 @@ How to run unit tests for plugin FusionInventory for GLPI
 5. Install last version of phpunit, and all optionnal packages : <http://www.phpunit.de/manual/current/en/installation.html>
 
 
-# Run unit tests
-Go in folder glpi/plugins/fuioninventory/phpunit/ and run : 
+## Run unit tests
+Go in folder glpi/plugins/fuioninventory/phpunit/ and run: 
+
+``` shell
 > phpunit AllTests.php
+```

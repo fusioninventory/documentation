@@ -1,7 +1,4 @@
----
-layout: single
-title: Update FusionInventory agent through a deploy task
----
+# Update FusionInventory agent through a deploy task
 
 The basic problem with updating the agent through a deployment task is the agent will have to uninstall itself while in use, thus throwing some errors.
 
@@ -22,7 +19,9 @@ The install.cmd script will contain all the necessary information to install / u
 
 You'll have to create a 7zip archive of those three files with the following command (providing you already have 7z.exe):
 
-    ..\7z a -r FUSIONINV.7z *.*
+``` shell
+..\7z a -r FUSIONINV.7z *.*
+```
 
 The archive has to be linked together with the SFX module and a SFX configuration file. 
 We'll create a config file named sfx_config.txt and containing the following:
@@ -36,5 +35,6 @@ We'll create a config file named sfx_config.txt and containing the following:
 
 Then we can create the package with the following command:
 
-    copy /b 7zSD.sfx + sfx_config.txt + FUSIONINV.7z FUSIONINV.EXE
-
+``` shell
+copy /b 7zSD.sfx + sfx_config.txt + FUSIONINV.7z FUSIONINV.EXE
+```

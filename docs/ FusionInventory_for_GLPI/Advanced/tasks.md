@@ -1,9 +1,5 @@
----
-layout: single
-title: Task creation
----
-
 # Task creation
+
 
 Use the (Normal) display of Task Management. This is used to list and
 search the existing tasks in the Fusion Inventory system.

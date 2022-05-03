@@ -1,9 +1,4 @@
----
-layout: single
-title: API-REST inventory
----
-
-#  API-REST-inventory
+# REST API inventory
 
 ##  setInventory: ?action=setInventory&devicetype=computer&machineid=$deviceid
 
@@ -13,26 +8,28 @@ The inventory content is submitted in a POST request.
 
 You can convert a XML inventory to the JSON format with this script:
 
-    #!/usr/bin/perl -w
-    
-    use strict;
-    use warnings;
-    
-    use Data::Dumper;
-    use XML::TreePP;
-    use JSON;
-    
-    use XML::TreePP;
-    my $tpp = XML::TreePP->new();
-    open XML, "</tmp/myxmlinventory.ocs" or die;
-    $/=undef;
-    my $xml = <XML>;
-    close XML;
-    
-    $xml =~ s/(<)([^>]*)(>)/$1.lc($2).$3/ge;
-    
-    my $tree = $tpp->parse($xml);
-    print Dumper($tree->{request}{content});
+``` perl
+#!/usr/bin/perl -w
+
+use strict;
+use warnings;
+
+use Data::Dumper;
+use XML::TreePP;
+use JSON;
+
+use XML::TreePP;
+my $tpp = XML::TreePP->new();
+open XML, "</tmp/myxmlinventory.ocs" or die;
+$/=undef;
+my $xml = <XML>;
+close XML;
+
+$xml =~ s/(<)([^>]*)(>)/$1.lc($2).$3/ge;
+
+my $tree = $tpp->parse($xml);
+print Dumper($tree->{request}{content});
+```
 
 ##  The changes
 

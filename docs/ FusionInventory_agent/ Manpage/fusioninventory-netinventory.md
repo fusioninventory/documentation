@@ -1,21 +1,11 @@
----
-layout: single
-title: fusioninventory-netinventory
----
-<style>
-.post-content h2 { font-weight: bold ; margin: 1.5rem 0; }
-.post-content h1:before { content: ''; }
-.post-content h2:before { content: ''; }
-.post-content h3:before { content: ''; }
-</style>
-<!-- begin man -->
+# fusioninventory-netinventory
 
-# NAME
+## Name
 
 fusioninventory-netinventory - Standalone network inventory
 
 
-# SYNOPSIS
+## Synopsis
 
 <pre>fusioninventory-netinventory [options] [--host &#60;host&#62;|--file &#60;file&#62;]
 
@@ -32,12 +22,12 @@ fusioninventory-netinventory - Standalone network inventory
     -h --help              print this message and exit
     --version              print the task version and exit</pre>
 
-# DESCRIPTION
+## Description
 
 _**fusioninventory-netinventory**_ can be used to run a network inventory task without a GLPI server.
 
 
-# OPTIONS
+## Options
 
 ### **\--host** _HOST_
 
@@ -97,10 +87,9 @@ Turn the debug mode on. Multiple usage allowed, for additional verbosity.
 
 
 
-# EXAMPLES
+## Examples
 
 Run an inventory against a network device, using SNMP version 2c authentication:
-
 
 <pre>    $&#62; fusioninventory-netinventory --host 192.168.0.1 \
     --credentials version:2c,community:public</pre>
@@ -112,4 +101,3 @@ Run an inventory against a network device, using SNMP version 3 authentication a
     --credentials version:3,username:admin,authprotocol:sha,authpassword:s3cr3t</pre>
 
 <em class='post-meta'>Last source update: Tue Dec 12 19:24:50 2017</em>
-<!-- end man -->

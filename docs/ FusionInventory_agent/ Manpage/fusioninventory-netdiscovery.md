@@ -1,21 +1,10 @@
----
-layout: single
-title: fusioninventory-netdiscovery
----
-<style>
-.post-content h2 { font-weight: bold ; margin: 1.5rem 0; }
-.post-content h1:before { content: ''; }
-.post-content h2:before { content: ''; }
-.post-content h3:before { content: ''; }
-</style>
-<!-- begin man -->
+# fusioninventory-netdiscovery
 
-# NAME
+## Name
 
 fusioninventory-netdiscovery - Standalone network discovery
 
-
-# SYNOPSIS
+## Synopsis
 
 <pre>fusioninventory-netdiscovery [options] --first &#60;address&#62; --last &#60;address&#62;
 
@@ -32,12 +21,12 @@ fusioninventory-netdiscovery - Standalone network discovery
     -h --help              print this message and exit
     --version              print the task version and exit</pre>
 
-# DESCRIPTION
+## Description
 
 _**fusioninventory-netdiscovery**_ can be used to run a network discovery task without a GLPI server.
 
 
-# OPTIONS
+## Options
 
 ### **\--first** _ADDRESS_
 
@@ -90,7 +79,7 @@ Turn the debug mode on. Multiple usage allowed, for additional verbosity.
 
 
 
-# EXAMPLES
+## Examples
 
 Run a discovery against a network range, using SNMP version 1:
 
@@ -106,4 +95,3 @@ Run a discovery against a network range, using multiple SNMP credentials:
     --credentials version:3,username:admin,authprotocol:sha,authpassword:s3cr3t</pre>
 
 <em class='post-meta'>Last source update: Tue Dec 12 19:25:05 2017</em>
-<!-- end man -->

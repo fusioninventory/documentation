@@ -1,36 +1,33 @@
----
-layout: single
-title: API-REST esx
----
-
-#  API-REST-esx
+# REST API ESX
 
 ##  getJobs?d=$deviceid
 
 Return a list of ESX server to query.
 
-    {
-       "jobs" : [
-          {
-             "password" : "secret",
-             "host" : "127.0.0.1",
-             "user" : "myLogin",
-             "uuid" : "zdqzdesdb00"
-          },
-          {
-             "password" : "secret",
-             "host" : "127.0.0.2",
-             "user" : "myLogin",
-             "uuid" : "08azdqzddb00"
-          },
-          {
-             "password" : "secret2",
-             "host" : "127.0.0.2",
-             "user" : "my2ndLogin",
-             "uuid" : "0sedesedesd"
-          }
-       ],
-    }
+``` json
+{
+   "jobs" : [
+      {
+         "password" : "secret",
+         "host" : "127.0.0.1",
+         "user" : "myLogin",
+         "uuid" : "zdqzdesdb00"
+      },
+      {
+         "password" : "secret",
+         "host" : "127.0.0.2",
+         "user" : "myLogin",
+         "uuid" : "08azdqzddb00"
+      },
+      {
+         "password" : "secret2",
+         "host" : "127.0.0.2",
+         "user" : "my2ndLogin",
+         "uuid" : "0sedesedesd"
+      }
+   ],
+}
+```
 
 ##  setLog ?action=setLog&machineid=$machineid&part=$part&uuid=$uuid&msg=$msg&code=$code
 

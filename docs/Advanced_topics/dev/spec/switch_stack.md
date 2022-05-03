@@ -1,9 +1,6 @@
----
-layout: single
-title: Switch stack inventory
----
+# Switch stack inventory
 
-##Switch stack inventory
+## Switch stack inventory
 
 
 Cisco 3750

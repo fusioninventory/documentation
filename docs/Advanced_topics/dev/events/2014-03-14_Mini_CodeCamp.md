@@ -1,18 +1,15 @@
----
-layout: single
-title: Mini code camp (2014-03-14)
----
+# Mini code camp (2014-03-14)
 
-# Attendees
+## Attendees
 
 * Gonéri Le Bouder
 * David Durieux
 * Guillaume Rousse
 * Kevin Roy
 
-# Discussion topics
+## Discussion topics
 
-## Network discovery and inventory
+### Network discovery and inventory
 
 The agent is now able to use its own database for device identification in a
 reliable matter, using SysObjectID, and to retrieve most information from
@@ -24,7 +21,7 @@ There is still room for improvements:
 * SNMP models and dictionary deprecation
 * hardware support database
 
-## Rest API : Communication Mayhem
+### Rest API : Communication Mayhem
 
 Actually, the API is a place with 6 participants talking a different
 language and communicating with the server in so different ways:
@@ -35,7 +32,7 @@ language and communicating with the server in so different ways:
 * Collect : no setLog at all and a setAnswer which is not commonly
   used by the other modules.
 
-## Rest API : Definition of task, job
+### Rest API : Definition of task, job
 
 A task does not share the same meaning between the plugin and the agent.
 
@@ -52,21 +49,21 @@ not sure the agent is affected too.
 If we should migrate the others XML talking tasks, we first need to tidy
 up the basic way every modules should communicate with the server.
 
-## FusionInventory Plugin : Continuous Integration
+### FusionInventory Plugin : Continuous Integration
 
 * Plugin unit tests have been slightly rewritten to use a shared
   initialization class.
 * Travis is up now (with failures instead of initialization errors).
 
-## FusionInventory Server : Standard Inventory Server
+### FusionInventory Server : Standard Inventory Server
 
 * PythonEve (RestAPI for lazy people)
 * ElasticSearch (scalable nosql database)
 * Flask
 
-## Avahi/MDNS/ZeroConf
+### Avahi/MDNS/ZeroConf
 
-## Releases & Roadmaps
+### Releases & Roadmaps
 
 * FusionInventory Agent 2.4.x
 * FusionInventory GLPI Plugin 0.85+1.0
@@ -75,7 +72,7 @@ up the basic way every modules should communicate with the server.
 
 
 
-# Debriefing
+## Debriefing
 
 ===== modéles SNMP =====
 

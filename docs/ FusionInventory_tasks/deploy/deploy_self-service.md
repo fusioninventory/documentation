@@ -1,21 +1,19 @@
----
-layout: single
-title: Deploy / self-service mode
----
+# Deploy / self-service mode
 
-# Introduction
+## Introduction
 
 This feature was added in version 9.1+1.0 of plugin FusionInventory for GLPI.
 
 The goal is the technicians prepare packages to deploy, not deploy them  but give possibility to 
 end users to install themselves.
 
-{% include info.html param="<em>Example:</em><br/>
-A technician create a Gimp package and the end user <em>toto</em> want install Gimp.
-He log in GLPI and select Gimp to install on his computer ;)" %}
+!!! info
+    <em>Example:</em><br/>
+    A technician create a Gimp package and the end user <em>toto</em> want install Gimp.
+    He log in GLPI and select Gimp to install on his computer ;)
 
 
-# How to enable self-service of a package
+## How to enable self-service of a package
 
 You create a package.
 
@@ -23,7 +21,7 @@ You create a package.
 * In tab _Targer for self-service_, select who can install on his computer: define a _profile_, an _entity_, a _user group_ or a _user_
 * In the profile (profiles of simplified interface only), there is a tab _FusionInventory_ and you must select _Self deploy package_ to read
 
-# User want install
+## User want install
 
 When the user connect to GLPI, he must go in menu _plugins_ > _FusionInventory_. 
 He see the computer (or the computers) where he is user (see _user_ field in computer form) and he can select the package(s) he want install on the computer.

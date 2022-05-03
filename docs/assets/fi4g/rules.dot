@@ -1,0 +1,28 @@
+digraph G {
+    style=filled;
+    color=lightgrey;
+    node [shape=box, color=purple];
+    size = "7, 7";
+
+
+        subgraph cluster_0 {
+                style=filled;
+                color=lightgrey;
+                node [style=filled,color=white];
+                "collector" -> "EQUIPMENT IMPORT AND LINK RULES";
+                "EQUIPMENT IMPORT AND LINK RULES" -> "machine found";
+                "EQUIPMENT IMPORT AND LINK RULES" -> "machine not found";
+                "EQUIPMENT IMPORT AND LINK RULES" -> "not enough criterias";
+                "machine found" -> "update";
+                "machine not found" -> "creates";
+                "not enough criterias" -> "pushed in “Ignored import list”";
+                "creates" -> "machine found";
+                label = "GLPI";
+        }
+
+
+    "Inventory" -> "collector";
+    "machine found" [ shape = "Mdiamond" ];
+    "machine not found" [ shape = "Mdiamond" ];
+    "not enough criterias" [ shape = "Mdiamond" ];
+}

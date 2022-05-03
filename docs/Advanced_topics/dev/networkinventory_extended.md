@@ -1,11 +1,8 @@
----
-layout: single
-title: NetworkInventory extended
----
+# NetworkInventory extended
 
 NetworkInventory extended
 
-# IO cards
+## IO cards
 
 It's networks equipments with network port:
 * Modem
@@ -23,7 +20,7 @@ in
 >             <NETWORK>
 
 
-# management cards
+## management cards
 
 It's components:
 * fans
@@ -40,7 +37,7 @@ in
 >             <COMPONENT>
 
 
-# Evolution of XML structure of networkequipment
+## Evolution of XML structure of networkequipment
 
 We need to have more fields in XML structure to manage more information of like:
 

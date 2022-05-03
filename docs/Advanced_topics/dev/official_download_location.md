@@ -1,9 +1,6 @@
----
-layout: single
-title: Official download location
----
+#Official download location
 
-# Where should we publish new files
+## Where should we publish new files
 
 ** This document is for FI developers **
 
@@ -13,7 +10,7 @@ Today different places are used to publish files. This situation
 is confusing. This document present what should be done in the
 futur.
 
-## Today
+### Today
 
 * prebuilt.f.o
 * CPAN
@@ -27,11 +24,11 @@ The problems :
 * Stable release can be download from various location, this is confusing.
 * Development and package snapshot are publish at the same place.
 
-## Draft
+### Draft
 
 We can use download.f.o or the forge.
 
-### download.f.o
+#### download.f.o
 
 * pros
     * simple to manage
@@ -41,7 +38,7 @@ We can use download.f.o or the forge.
     * need to define the file hierachie
     * yet another anonical download localisation
 
-### Forge.f.o
+#### Forge.f.o
 
 * pros
     * already partially in use

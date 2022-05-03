@@ -1,7 +1,4 @@
----
-layout: single
-title: Deploy REST API answer samples
----
+# Deploy REST API answer samples
 
 # On deployement job list with audit checks and post deployment actions
 
@@ -10,7 +7,7 @@ the two files and then will process the order.  The order can be
 started until maxValidityDate (GMT).  The files unique ID
 are their sha512 signature.
 
-~~~~
+``` json
 {
    "jobs" : [
       {
@@ -231,6 +228,4 @@ are their sha512 signature.
       }
    }
 }
-~~~~
-
-
+```

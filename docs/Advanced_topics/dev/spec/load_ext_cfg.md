@@ -1,9 +1,4 @@
----
-layout: single
-title: Spec for load configuration from external place
----
-
-# Load configuration from external place
+# Spec for load configuration from external place
 
 ## Backend specific keys in agent.cfg
 

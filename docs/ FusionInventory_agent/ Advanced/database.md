@@ -1,9 +1,6 @@
----
-layout: single
-title: Agent database
----
+# Agent database
 
-# Overview
+## Overview
 
 The agent database is located in agent data directory. It consist of the following files:
 
@@ -18,7 +15,7 @@ The agent database is located in agent data directory. It consist of the followi
 Those files can easily be customized if needed, as their format is
 self-documented. However, local modifications will get lost on upgrade.
 
-# SNMP device database
+## SNMP device database
 
 The `sysobject.ids` file is a database of known SNMP devices, indexed by the
 discriminant part of their SysObjectID value:
@@ -45,6 +42,6 @@ The SysObjectID suffix is the last part of the full SysObjectID value, ie:
 
 The SysObjectID value for any SNMP device can be retrieved by any SNMP client,
 using its OID (.1.3.6.1.2.1.1.2.0), or with either
-[fusioninventory-netinventory](man/fusioninventory-netinventory) or
-[fusioninventory-netdiscovery](man/fusioninventory-netdiscovery) command-line
+[fusioninventory-netinventory](../ Manpage/fusioninventory-netinventory.md) or
+[fusioninventory-netdiscovery](../ Manpage/fusioninventory-netdiscovery.md) command-line
 tools, with --debug option.

@@ -1,22 +1,13 @@
----
-layout: single
-title: fusioninventory-agent
----
-<style>
-.post-content h2 { font-weight: bold ; margin: 1.5rem 0; }
-.post-content h1:before { content: ''; }
-.post-content h2:before { content: ''; }
-.post-content h3:before { content: ''; }
-</style>
-<!-- begin man -->
+# fusioninventory-agent
 
-# NAME
+
+## Name
 
 fusioninventory-agent - FusionInventory agent For Linux/UNIX,
 Windows and MacOSX
 
 
-# SYNOPSIS
+## Synopsis
 
 <pre>fusioninventory-agent [options] [--server server|--local path]
 
@@ -96,12 +87,12 @@ Windows and MacOSX
                                      !!! Use it at your own risk as you may
                                      experiment perl crash under win32 !!!</pre>
 
-# DESCRIPTION
+## Description
 
 The _**fusioninventory-agent**_ agent is a generic multi-platform agent. It can perform a large array of management tasks, such as local inventory, software deployment or network discovery. It can be used either standalone, or in combination with a compatible server (OCS, GLPI, OTRS) acting as a centralized control point.
 
 
-# OPTIONS
+## Options
 
 Most of the options are available in a _short_ form and a _long_ form. For example, the two lines below are all equivalent:
 
@@ -109,9 +100,9 @@ Most of the options are available in a _short_ form and a _long_ form. For examp
 <pre>    % fusioninventory-agent -s localhost
     % fusioninventory-agent --server localhost</pre>
 
-## Target definition options
+### Target definition options
 
-### **-s**, **\--server**=_URI_
+#### **-s**, **\--server**=_URI_
 
 Send the results of tasks execution to given server.
 
@@ -134,7 +125,7 @@ and FusionInventory for GLPI this one:
 Multiple values can be specified, using comma as a separator.
 
 
-### **-l**, **\--local**=_PATH_
+#### **-l**, **\--local**=_PATH_
 
 Write the results of tasks execution locally.
 
@@ -149,68 +140,52 @@ Exact behaviour according to given path:
 Multiple values can be specified, using comma as a separator.
 
 
+### Target scheduling options
 
-
-## Target scheduling options
-
-### **\--delaytime**=_LIMIT_
+#### **\--delaytime**=_LIMIT_
 
 Set an initial delay before the first target, whose value is computed randomly between LIMIT / 2 and LIMIT seconds. This setting is ignored for server targets after the initial contact, in favor of server-specified parameter (PROLOG_FREQ).
 
 
-### **\--lazy**
+#### **\--lazy**
 
 Do not contact the target before next scheduled time.
-
 
 This option is only available when the agent is not run as a server.
 
 
+### Task selection options
 
-
-## Task selection options
-
-### **\--list-tasks**
+#### **\--list-tasks**
 
 List all available tasks, tasks planned for execution and exit
 
-
-### **\--no-task**=_TASK_
+#### **\--no-task**=_TASK_
 
 Do not run given task.
 
-
 Multiple values can be specified, using comma as a separator. See option _\--list-tasks_ for the list of available tasks.
 
-
-### **\--tasks**=_TASK_
+#### **\--tasks**=_TASK_
 
 Run given tasks in given order.
 
-
 Multiple tasks can be specified, using comma as a separator. A task can be specified several times. if &#39;...&#39; is given as last element, all other available tasks are executed.
-
 
 See option _\--list-tasks_ for the list of available tasks.
 
+!!! example
 
-Examples :
+    * \--tasks=inventory,deploy,inventory First task executed is &#39;inventory&#39;, second task is &#39;deploy&#39;, third and last task is &#39;inventory&#39;.
 
-
-* \--tasks=inventory,deploy,inventory First task executed is &#39;inventory&#39;, second task is &#39;deploy&#39;, third and last task is &#39;inventory&#39;.
-
-
-* \--tasks=inventory,deploy,... First executed task is &#39;inventory&#39;, second task is &#39;deploy&#39; and then all other available tasks are executed.
+    * \--tasks=inventory,deploy,... First executed task is &#39;inventory&#39;, second task is &#39;deploy&#39; and then all other available tasks are executed.
 
 
+### Inventory task specific options
 
-
-## Inventory task specific options
-
-### **\--no-category**=_CATEGORY_
+#### **\--no-category**=_CATEGORY_
 
 Do not list given category items in inventory.
-
 
 Multiple values can be specified, using comma as a separator. The available categories are:
 
@@ -239,132 +214,111 @@ Multiple values can be specified, using comma as a separator. The available cate
 * video
 * virtualmachine
 
-
-### **\--scan-homedirs**
+#### **\--scan-homedirs**
 
 Allow the agent to scan home directories for virtual machines.
 
-
-### **\--scan-profiles**
+#### **\--scan-profiles**
 
 Allow the agent to scan user profiles for software.
 
 
-### **\--html**
+#### **\--html**
 
 Save the inventory as HTML.
 
-
 This is only used for local inventories.
 
-
-### **-f**, **\--force**
+#### **-f**, **\--force**
 
 Send an inventory to the server, even if this last one doesn&#39;t ask for it.
 
-
-### **\--backend-collect-timeout**=_TIME_
+#### **\--backend-collect-timeout**=_TIME_
 
 Timeout for inventory modules execution.
 
-
-### **\--additional-content**=_FILE_
+#### **\--additional-content**=_FILE_
 
 Additional inventory content file.
 
-
 This file should be an XML file, using same syntax as the one produced by the agent.
 
+### Package deployment task specific options
 
-
-
-## Package deployment task specific options
-
-### **\--no-p2p**
+#### **\--no-p2p**
 
 Do not use peer to peer to download files.
 
+### Server target specific options
 
-
-
-## Server target specific options
-
-### **-P**, **\--proxy**=_PROXY_
+#### **-P**, **\--proxy**=_PROXY_
 
 Use _PROXY_ as HTTP proxy.
-
 
 By default, the agent uses HTTP_PROXY environment variable.
 
 
-### **-u** _USER_, **\--user**=_USER_
+#### **-u** _USER_, **\--user**=_USER_
 
 Use _USER_ for server authentication.
 
 
-### **-p**, **\--password**=_PASSWORD_
+#### **-p**, **\--password**=_PASSWORD_
 
 Use _PASSWORD_ for server authentication.
 
 
-### **\--ca-cert-dir**=_DIRECTORY_
+#### **\--ca-cert-dir**=_DIRECTORY_
 
 CA certificates directory.
 
 
-### **\--ca-cert-file**=_FILE_
+#### **\--ca-cert-file**=_FILE_
 
 CA certificates file.
 
 
-### **\--no-ssl-check**
+#### **\--no-ssl-check**
 
 Do not check server SSL certificate.
 
 
-### **\--timeout**=_TIME_
+#### **\--timeout**=_TIME_
 
 Timeout for server connections.
 
+### Web interface options
 
-
-
-## Web interface options
-
-### **\--no-httpd**
+#### **\--no-httpd**
 
 Disable the embedded web server.
 
 
-### **\--httpd-ip**=_IP_
+#### **\--httpd-ip**=_IP_
 
 The network interface to use for the embedded web server (all).
 
 
-### **\--httpd-port**=_PORT_
+#### **\--httpd-port**=_PORT_
 
 The network port to use for the embedded web server (62354).
 
 
-### **\--httpd-trust**=_IP_
+#### **\--httpd-trust**=_IP_
 
 Trust requests from given addresses without authentication token (false).
 
 
 For example: &#34;192.168.0.0/24&#34;, &#34;192.168.168.0.5&#34; or an IP range like &#34;20.34.101.207 - 201.3.9.99&#34;. Hostnames are also accepted. See [Net::IP](http://search.cpan.org/perldoc?Net%3A%3AIP) documentation to get more example.
 
-
 Multiple values can be specified, using comma as a separator.
 
 
+### Logging options
 
-
-## Logging options
-
-### **\--logger**=_BACKEND_
+#### **\--logger**=_BACKEND_
 
 Logger backend to use.
-
 
 Multiple values can be specified, using comma as a separator. The available backends are:
 
@@ -376,37 +330,33 @@ Multiple values can be specified, using comma as a separator. The available back
 Multiple values can be specified, using comma as a separator.
 
 
-### **\--logfile**=_FILE_
+#### **\--logfile**=_FILE_
 
 Log message in _FILE_ (implies File logger backend).
 
 
-### **\--logfile-maxsize**=_SIZE_
+#### **\--logfile-maxsize**=_SIZE_
 
 Max logfile size in MB, default is unlimited. When the max size is reached, the file is truncated. This is only useful if there is no log rotation mechanism on the system.
 
 
-### **\--logfacility**=_FACILITY_
+#### **\--logfacility**=_FACILITY_
 
 Syslog facility to use (default LOG_USER).
 
 
-### **\--color**
+#### **\--color**
 
 Display color on the terminal, when the Stderr backend is used.
-
 
 This options is ignored on Windows.
 
 
+### Configuration options
 
-
-## Configuration options
-
-### **\--config**=_BACKEND_
+#### **\--config**=_BACKEND_
 
 Configuration backend to use.
-
 
 The available backends are:
 
@@ -415,70 +365,60 @@ The available backends are:
 * none: don&#39;t read any configuration.
 
 
-### **\--conf-file**=_FILE_
+#### **\--conf-file**=_FILE_
 
 Use _FILE_ as configuration file (implies file configuration backend).
 
 
-### **\--conf-reload-interval**=_SECONDS_
+#### **\--conf-reload-interval**=_SECONDS_
 
 SECONDS is the number of seconds between two configuration reloadings. Default value is 0, which means that configuration is never reloaded. Minimum value is 60. If given value is less than this minimum, it is set to this minimum. If given value is less than 0, it is set to 0.
 
 
+### Execution mode options
 
-
-## Execution mode options
-
-### **-w** _LIMIT_, **\--wait**=_LIMIT_
+#### **-w** _LIMIT_, **\--wait**=_LIMIT_
 
 Wait a random delay whose value is computed randomly between 0 and LIMIT seconds, before execution. This is useful when execution is triggered from some kind of system scheduling on multiple clients, to spread the server load.
 
 
-### **-d**, **\--daemon**
+#### **-d**, **\--daemon**
 
 Run the agent as a daemon.
 
+#### **\--no-fork**
 
-### **\--no-fork**
-
-Don&#39;t fork in background.
-
+Don't fork in background.
 
 This is only useful when running as a daemon.
 
 
-### **\--pidfile**=_FILE_
+#### **\--pidfile**=_FILE_
 
 Store pid in _FILE_.
 
-
 This is only useful when running as a daemon.
 
 
-### **\--tag**=_TAG_
+#### **\--tag**=_TAG_
 
 Add the given tag to every inventory results.
 
 
-### **\--debug**
+#### **\--debug**
 
 Turn the debug mode on. You can use the parameter up to 3 times in a row to increase the verbosity (e.g: **\--debug \--debug**).
 
-
 Level 3 turns on the debug mode of some external libraries like [Net::SSLeay](http://search.cpan.org/perldoc?Net%3A%3ASSLeay). These messages will only be be printed on STDERR.
 
-
-### **\--setup**
+#### **\--setup**
 
 Print the agent setup directories and exit.
 
 
-### **\--version**
+#### **\--version**
 
 Print the version and exit.
 
 
-
-
 <em class='post-meta'>Last source update: Tue Dec 12 19:11:54 2017</em>
-<!-- end man -->

@@ -1,7 +1,4 @@
----
-layout: single
-title: Deploy Rest API
----
+# Deploy Rest API
 
 This document covers the agent/server protocol used by the "deploy"
 task.
@@ -9,9 +6,9 @@ task.
 This module is used to do remote software deployments and command
 executions.
 
-#  Jobs request
+##  Jobs request
 
-##  Request
+###  Request
 
 ```
 /deploy?action=getJobs&machineid=$machineid&version=$version
@@ -26,15 +23,15 @@ requested everytime the task is started.
 If a job has been processed, the server must remove it from the job
 list.
 
-##  Answer
+###  Answer
 
 Jobs are processed in the order given by the server.
 
-See [Deploy REST API server answer samples](deploy/answer-samples.html)
+See [Deploy REST API server answer samples](deploy/answer-samples.md)
 
-##  Answer structure format (jobs)
+###  Answer structure format (jobs)
 
-### actions
+#### actions
 
 a list of operation to process
 
@@ -46,7 +43,8 @@ a list of operation to process
   postpone lets the user decide if the installation should be
   postponed.
 
-{% include warning.html param="messageBox action planned for later support<br />Still not supported in Deploy v2.1.0 from FusionInventory-Agent v2.3.18" %}
+!!! warning
+    messageBox action planned for later support<br />Still not supported in Deploy v2.1.0 from FusionInventory-Agent v2.3.18
 
 `cmd`: Execute a command
 
@@ -87,13 +85,13 @@ rm -Rf $arg
   epel.
 * version (optional): the version to use, e.g: ">= 3", "= 3.0-2".
 
-### associatedFiles
+#### associatedFiles
 
 The files (sha512 reference) to be downloaded.
 Those sha512 must be listed in the `associatedFiles`
 section (array) of the answer.
 
-### checks
+#### checks
 
 A array of check to evaluate. The code returned to the server and their behaviors a describe below.
 
@@ -114,7 +112,8 @@ A array of check to evaluate. The code returned to the server and their behavior
 * `freespaceGreater`: true if $path freespace is greater than $value
   (MByte).
 
-{% include warning.html param="Registry path must:<br /><ul><li>start with the complete hive name (HKEY_something)</li><li>use the `/` delimiter (not `\ ` )</li></ul>" %}
+!!! warning
+    Registry path must:<br /><ul><li>start with the complete hive name (HKEY_something)</li><li>use the `/` delimiter (not `\ ` )</li></ul>
 
 A check failure will stop a job and the type of failure can be
 interpreted like the following:
@@ -130,7 +129,7 @@ interpreted like the following:
   > For example, there is no more space left on the harddrive to
     process installation.
 
-##  Answer structure format (associatedFiles)
+###  Answer structure format (associatedFiles)
 
 Only the files used by the jobs must be in this list.
 
@@ -148,11 +147,13 @@ Only the files used by the jobs must be in this list.
 * `p2p-retention-duration`: how long an archive must be kept for
   sharing before its deletion from cache (minutes)
 
-# Update jobs' status
+## Update jobs' status
 
-##  Request
+###  Request
 
-    /deploy?action=setStatus&machineid=$machineid&part=$part&uuid=$uuid&currentStep=$currentStep&status=$status&msg=$msg
+```
+/deploy?action=setStatus&machineid=$machineid&part=$part&uuid=$uuid&currentStep=$currentStep&status=$status&msg=$msg
+```
 
 The agent uses this method to update the status of the deployment.
 
@@ -193,12 +194,12 @@ The log:
 The log length shouldn't be greater than 1000 caracters. If the value
 is above, the begining may be silently truncated by the agent.
 
-##  Answer
+###  Answer
 
 The expected answer is a JSON encoded empty hash ref {}.
 
 
-#  Multipart
+##  Multipart
 
 The multipart is the list of the file to download (from one to
 unlimited). This can file name can include a relative directory path
@@ -211,11 +212,11 @@ optional compression. So be careful if the initial file has already
 this extension, you need to rename it to something like
 file.tar.gz-01.
 
-## Request
+### Request
 
 POST a log file for a given job.
 
-~~~~
+``` shell
 #!/bin/sh
 
 MIRROR="http://deploy/ocsinventory/deploy/prepare/"
@@ -254,9 +255,9 @@ echo "
     \"name\" : \"$FILE\"
     }
 "
-~~~~
+```
 
-#  Communication examples
+## Communication examples
 
 Get the job, download the file and run the command.
 

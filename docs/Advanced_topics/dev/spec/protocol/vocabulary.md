@@ -1,8 +1,3 @@
----
-layout: single
-title: Vocabulary
----
-
 # Vocabulary
 
 ## devices types

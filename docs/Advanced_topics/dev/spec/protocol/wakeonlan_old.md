@@ -1,8 +1,3 @@
----
-layout: single
-title: Wake-on-lan protocol
----
-
 # Wake-on-lan protocol
 
 ## Server to agent message

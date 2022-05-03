@@ -1,21 +1,11 @@
----
-layout: single
-title: fusioninventory-win32-service
----
-<style>
-.post-content h2 { font-weight: bold ; margin: 1.5rem 0; }
-.post-content h1:before { content: ''; }
-.post-content h2:before { content: ''; }
-.post-content h3:before { content: ''; }
-</style>
-<!-- begin man -->
+# fusioninventory-win32-service
 
-# NAME
+## Name
 
 fusioninventory-win32-service - FusionInventory Agent service for Windows
 
 
-# SYNOPSIS
+## Synopsis
 
 <pre>fusioninventory-win32-service [--register|--delete|--help] [options]
 
@@ -40,4 +30,3 @@ fusioninventory-win32-service - FusionInventory Agent service for Windows
     perl bin/fusioninventory-win32-service --delete -n fia-test</pre>
 
 <em class='post-meta'>Last source update: Tue Dec 12 19:12:41 2017</em>
-<!-- end man -->

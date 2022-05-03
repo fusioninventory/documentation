@@ -12,4 +12,4 @@
 
 We welcome everyone to contribute to issue reports, suggest new features, and create pull requests.
 
-- [FusionSuite Documentation](https://github.com/fusioninventory/documentation)  
+- [FusionInventory Documentation](https://github.com/fusioninventory/documentation)  

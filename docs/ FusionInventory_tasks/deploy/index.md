@@ -1,9 +1,4 @@
----
-layout: single
-title: Package deployment
-redirect_from:
- - /documentation/task/deploy.html
----
+# Package deployment
 
 Package Deployment is both integrated with GLPI via *massive actions* and via the Plugin interface.
 
@@ -13,9 +8,9 @@ Package Deployment is both integrated with GLPI via *massive actions* and via th
     for other tasks.
 2.  The Deploy dropdown is used to create deployable packages.
 
-# FusionInventory Dropdown
+## FusionInventory Dropdown
 
-## Agents Management
+### Agents Management
 
 This is used to quickly check the status of a FusionInventory agent:
 
@@ -26,16 +21,16 @@ This is used to quickly check the status of a FusionInventory agent:
 -   What it's unique ID is (used to uniquely identify one agent from
     another).
 
-## Package Management
+### Package Management
 
-### Create a package
+#### Create a package
 
 ![](../../assets/tasks/deploy/FusionPluginPackageManagementMain.png)
 
 1.  Use *Add a Package* to create a new package.
 2.  Click on an existing package to edit that package.
 
-### Edit package
+#### Edit package
 
 You can add checks before running the package, but you can prefer to do
 that with the deployed scripts.
@@ -55,13 +50,15 @@ that with the deployed scripts.
 
 If you use "move" command, use "*" in case from if the agent get the file from GLPI
 
-## Task Management (Normal)
+### Task Management (Normal)
 
 Please see the [task creation]({{ site.baseurl }}/documentation/fi4g/tasks.html) page.
 
-### Creating a deployment task
+#### Creating a deployment task
 
-**NOTE**: You **must** have created the package you want to deploy
+!!! note
+    You **must** have created the package you want to deploy
+
 FIRST. Please read that section if you need help with that.
 
 ![](../../assets/tasks/deploy/FusionInventoryTaskTest.png)
@@ -88,7 +85,7 @@ Then:
     find as you type to add in the selection to apply the task to. Click
     add.
 
-#### Assigning Computers to a deployment task via Mass Action:
+##### Assigning Computers to a deployment task via Mass Action:
 
 1.  Make sure you have created but not activated a task and a deployment
     package.
@@ -97,7 +94,7 @@ Then:
 4.  Select the existing deployment package.
 5.  Click Post. This will create a new job for that task.
 
-### Running a Deployment Task
+#### Running a Deployment Task
 
 You can run a deployment task more than once, and it is separate from
 creating one.
@@ -108,14 +105,14 @@ creating one.
 2.  Then either force the task to start immediately with "Force Start"
     OR schedule the task start and click update.
 
-### Checking a Tasks status
+#### Checking a Tasks status
 
-#### Running Jobs
+##### Running Jobs
 
 When a job is running, you can see it by clicking on the FusionInventory
 menu and selecting Running Jobs.
 
-#### Task status on a PC
+##### Task status on a PC
 
 When a task is running on a PC it will update information about its
 status. This log is saved after the task completes and can be reviewed
@@ -123,7 +120,7 @@ from the Task Job page.
 
 ![](../../assets/tasks/deploy/FusionInventoryTaskStatusDetails.png)
 
-## Deploy Dropdown
+### Deploy Dropdown
 
 This dropdown is used to create packages for deployment and to edit
 them, list them and look at groups of computers (which are internal to

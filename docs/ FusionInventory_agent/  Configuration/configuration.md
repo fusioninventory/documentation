@@ -36,10 +36,10 @@ Warning: multiple targets doesn't mean "execute once, send results many times",
 but "execute and send results many times", implying potentially different
 results (see [bug 2335](http://forge.fusioninventory.org/issues/2335)).
 
-See [agent.cfg man page](man/agent.cfg.html) for full parameters list.
+See [agent.cfg man page](../ Manpage/agent.cfg.md) for full parameters list.
 
 ## Command line
 
 All configuration parameters can be overriden by command-line options.
 
-See various executable [man pages](man/) for full options list.
+See various executable [man pages](../ Manpage/) for full options list.

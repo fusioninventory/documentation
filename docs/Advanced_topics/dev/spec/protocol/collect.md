@@ -1,13 +1,8 @@
----
-layout: single
-title: API-REST collect
----
-
-#  API-REST-collect
+# REST API collect
 
 Protocol specification used to collect specific information on a machine.
 
-##  ?action=getJob&machineid=$machineid
+## ?action=getJob&machineid=$machineid
 
 * action:getJob
 * machineid: $machineid
@@ -21,94 +16,106 @@ Server will return an array of job to process, a job is:
 
 *getFromRegistry*
 
-    [
-       {
-          "function" : "getFromRegistry",
-          "64bit" : 0, // not implemented yet
-          "path" : "HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/Session Manager",
-          "uuid" : xxxx1
-       }
-    ]
+``` json
+[
+    {
+        "function" : "getFromRegistry",
+        "64bit" : 0, // not implemented yet
+        "path" : "HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/Session Manager",
+        "uuid" : xxxx1
+    }
+]
+```
 
 path can finish with a wildcare, in such case, all the key/value of the current directory are returned.
 
 *getFromWMI*
 
-    [
-       {
-          "function" : "getFromWMI",
-          "moniker" : "foobar" // default is winmgmts:{impersonationLevel=impersonate,(security)}!//./
-          "class" : "Win32_Keyboard",
-          "properties" : [ "Name", "Caption", "Manufacturer", "Description", "Layout" ],
-          "uuid" : xxxx3
-       }
-    ]
+``` json
+[
+    {
+        "function" : "getFromWMI",
+        "moniker" : "foobar" // default is winmgmts:{impersonationLevel=impersonate,(security)}!//./
+        "class" : "Win32_Keyboard",
+        "properties" : [ "Name", "Caption", "Manufacturer", "Description", "Layout" ],
+        "uuid" : xxxx3
+    }
+]
+```
 
 *findFile*
 
-    [
-       {
-          "function" : "findFile",
-          "limit" : 5, # Number of entry to look for, default is 50
-          "recursive" : 0,
-          "dir": "/home" # Where to start the search, default is /
-          "filter" : // filter and its content is optional
-              {
-                          "regex" : "\d{4}\.bmp$",// regex done on the full path
-                          "sizeEquals" : "445635",
-                          "sizeGreater" : "432455",
-                          "sizeLower" : "454545",
-                          "checkSumSHA512" : "xxxx",
-                          "checkSumSHA2" : "zzzzzz",
-                          "name" : "toto",
-                          "iname" : "ToTo", // case insensitive
-                          "is_file" : 1,
-                          "is_dir" : 0
-              }
-          ,
-          "uuid" : xxxx3
-       }
-    ]
+``` json
+[
+    {
+        "function" : "findFile",
+        "limit" : 5, # Number of entry to look for, default is 50
+        "recursive" : 0,
+        "dir": "/home" # Where to start the search, default is /
+        "filter" : // filter and its content is optional
+            {
+                        "regex" : "\d{4}\.bmp$",// regex done on the full path
+                        "sizeEquals" : "445635",
+                        "sizeGreater" : "432455",
+                        "sizeLower" : "454545",
+                        "checkSumSHA512" : "xxxx",
+                        "checkSumSHA2" : "zzzzzz",
+                        "name" : "toto",
+                        "iname" : "ToTo", // case insensitive
+                        "is_file" : 1,
+                        "is_dir" : 0
+            }
+        ,
+        "uuid" : xxxx3
+    }
+]
+```
 
 *getFile* **[not implemented]**
 
-    [
-        {
-            "function" : "getFile",
-            "path" : "/tmp/foobar.txt",
-            "stat" : 1, # get file statistics
-            "sizemax" : 500, # limit size in octects
-        }
-    ]
+``` json
+[
+    {
+        "function" : "getFile",
+        "path" : "/tmp/foobar.txt",
+        "stat" : 1, # get file statistics
+        "sizemax" : 500, # limit size in octects
+    }
+]
+```
 
 *getFileStat* **[not implemented]**
 
-    [
-        {
-            "function" : "getFile",
-            "path" : "/tmp/foobar.txt",
-        }
-    ]
+``` json
+[
+    {
+        "function" : "getFile",
+        "path" : "/tmp/foobar.txt",
+    }
+]
+```
 
 *runCommand*
 
-    [
-       {
-          "function" : "runCommand",
-          "command" : "route",
-          "dir" : "c:/", # Where to run the command
-          "uuid" : "xxxx3",
-          "filter" : { (optional)
-              "firstMatch" : "(eth\d+)", // or (the first match for a regex)
-              "firstLine" : "1", // or (the first line)
-              "lineCount" : 1 // the number of lines
-          }
-       }
-    ]
+``` json
+[
+    {
+        "function" : "runCommand",
+        "command" : "route",
+        "dir" : "c:/", # Where to run the command
+        "uuid" : "xxxx3",
+        "filter" : { (optional)
+            "firstMatch" : "(eth\d+)", // or (the first match for a regex)
+            "firstLine" : "1", // or (the first line)
+            "lineCount" : 1 // the number of lines
+        }
+    }
+]
+```
 
-##  ?action=setAnswer&uuid=$uuid
+## ?action=setAnswer&uuid=$uuid
 
-the agent POST the answer in a JSON XML with this structure:
+The agent POST the answer in a JSON XML with this structure:
 
 
 The answer structure is always a array of key/val hash.
@@ -141,7 +148,8 @@ Returns undef in case of error or an array of the following hash:
 
 ###  runCommand
 
-{% include warning.html param="Function disabled for the moment." %}
+!!! warning
+    Function disabled for the moment.
 
 * output: "blabla",
 * errorMsg: "an optional error message in english",

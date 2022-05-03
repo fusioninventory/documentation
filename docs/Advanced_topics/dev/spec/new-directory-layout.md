@@ -1,9 +1,4 @@
----
-layout: single
-title: Specs for new directory layout
----
-
-# New directory layout
+# Specs for new directory layout
 
 ## git repository layout
 

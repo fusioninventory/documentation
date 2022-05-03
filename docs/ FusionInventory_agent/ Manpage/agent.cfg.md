@@ -1,22 +1,19 @@
----
-layout: single
-title: agent.cfg
----
+# agent.cfg
 
-# NAME
+## Name
 
 agent.cfg - FusionInventory agent configuration file
 
-# SYNOPSIS
+## Synopsis
 
 /etc/fusioninventory/agent.cfg
 
-# DESCRIPTION
+## Description
 
 On Unix, fusioninventory-agent executables read their configuration from
 `/etc/fusioninventory/agent.cfg`.
 
-# GENERIC DIRECTIVES
+## Generic directives
 
 - **server**
 
@@ -145,7 +142,7 @@ On Unix, fusioninventory-agent executables read their configuration from
     - 2: messages exchanged with the server
     - 3: additional traces for some external libraries as Net::SSLeay
 
-# TASK-SPECIFIC DIRECTIVES
+## Task-specific directives
 
 - **tag**
 
