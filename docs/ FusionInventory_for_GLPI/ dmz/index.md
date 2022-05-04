@@ -7,7 +7,7 @@
 You can collect your DMZ inventories by using a limited script that get the POST
 request of the agents.
 
-Download [collect.php](https://raw.githubusercontent.com/fusioninventory/documentation/docs/ FusionInventory_for_GLPI/ dmz/collect.php) and copy it somewhere PHP is enabled. For example `/var/www` or `/var/www/html`.
+Download [collect.php](https://raw.githubusercontent.com/fusioninventory/documentation/master/docs/%20FusionInventory_for_GLPI/%20dmz/collect.php) and copy it somewhere PHP is enabled. For example `/var/www` or `/var/www/html`.
 
 Then, you can configure agents in DMZ machines this way:
 
