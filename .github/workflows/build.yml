@@ -1,0 +1,17 @@
+name: Build documentation
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    name: Build doc
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - run: pip install mkdocs-material
+      - name: BUild documentation
+        run: mkdocs build --strict --site-dir www

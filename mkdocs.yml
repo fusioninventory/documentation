@@ -1,5 +1,5 @@
 site_name: FusionInventory documentation
-site_url: https://forge.fusioninventory.org/documentation/
+site_url: https://documentation.fusioninventory.org/
 
 repo_name: fusioninventory/documentation
 repo_url: 'https://github.com/fusioninventory/documentation'
@@ -47,7 +47,7 @@ theme:
   features:
     - navigation.top
     - content.code.annotate # (1)
-  logo: assets/logo.png
+  logo: assets/logo_without_text.png
   favicon: assets/favicon.png
 
 extra_css:
