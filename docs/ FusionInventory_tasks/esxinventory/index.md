@@ -33,11 +33,11 @@ On Debian/Ubuntu :
 # apt-get install libfusioninventory-agent-task-esx-perl
 ```
 
-From Source, see the [agent source installation page]({{ site.baseurl }}/documentation/agent/installation/source.html).
+From Source, see the [agent source installation page](../../ FusionInventory_agent/   Installation/from source/source.md).
 
 ## From the Command line
 
-You can use [fusioninventory-esx]({{ site.baseurl }}/documentation/references/) and [fusioninventory-injector]({{ site.baseurl }}/documentation/references/) to:
+You can use [fusioninventory-esx](../../ FusionInventory_agent/ Manpage/fusioninventory-esx.md) and [fusioninventory-injector](../../ FusionInventory_agent/ Manpage/fusioninventory-injector.md) to:
 
 1. fetch the Inventories from the server
 2. push the Inventories in GLPI
@@ -92,7 +92,7 @@ Click on + to add a device
 
 #### Add a task 
 
-Please see the [task creation](../../ FusionInventory_for_GLPI/Advanced/task.md) page.
+Please see the [task creation](../../ FusionInventory_for_GLPI/Advanced/tasks.md) page.
 
 Click on + to add a task :
 

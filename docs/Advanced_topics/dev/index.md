@@ -37,22 +37,17 @@ Module-specific communication protocols:
 
 ### Release process
 
-* [Release process]({{ site.baseurl }}/documentation/agent/dev/release_process.html)
+* [Release process](../../ FusionInventory_agent/Packaging/release_process.md)
 
 ### Get the sources
 
-* [Source]({{ site.baseurl }}/documentation/agent/installation/source.html)
-* Git: [UNIX]({{ site.baseurl }}/documentation/agent/dev/git_unix.html), [Windows]({{ site.baseurl }}/documentation/agent/dev/git_windows.html)
-* [Official download location]({{ site.baseurl }}/documentation/dev/official_download_location.html)
+* [Source](../../ FusionInventory_agent/   Installation/from source/source.md)
+* Git: [UNIX](../../ FusionInventory_agent/Packaging/git_unix.md), [Windows](../../ FusionInventory_agent/Packaging/git_windows.md)
 
 ## Plugin FusionInventory for GLPI
 
 * Branches: <br/>
   › [master](https://github.com/fusioninventory/fusioninventory-for-glpi/tree/master)  › [![Build Status](https://travis-ci.org/fusioninventory/fusioninventory-for-glpi.png?branch=master)](https://travis-ci.org/fusioninventory/fusioninventory-for-glpi) [![Coverage Status](https://coveralls.io/repos/fusioninventory/fusioninventory-for-glpi/badge.svg?branch=master&service=github)](https://coveralls.io/github/fusioninventory/fusioninventory-for-glpi?branch=master)
-
-### Code documentation of plugin for GLPI
-
-[Plugin FusionInventory for GLPI code documentation]({{ site.baseurl }}/documentation/dev/plugin_doc_code/index.html)
 
 ### Specifications coded
 

@@ -125,16 +125,13 @@ either Crypt::SSLeay or IO::Socket::SSL perl modules transparently for HTTPS
 support. However, only the second one is able to perform server certificate
 validation. As a consequence, the agent will refuse to use HTTPS, and exit
 immediatly if IO::Socket::SSL is not available, unless certificate checking has
-been explicitely disabled, through *no-ssl-check* [configuration
-parameter]({{ site.baseurl }}/documentation/agent/configuration.html) (or alternatively, *--no-ssl-check* [command
-line option]({{ site.baseurl }}/documentation/agent/man/)).
+been explicitely disabled, through *no-ssl-check* [configuration parameter](../ FusionInventory_agent/  Configuration/configuration.md) (or alternatively, *--no-ssl-check* [command line option](../ FusionInventory_agent/ Manpage/agent.cfg.md)).
 
 The Certification Authority (CA) certificate of the webserver is to be used.
 The CA certificate must be installed on each agent host.
 The agent should be configured to use it as certification authority, with
-*ca-cert-file* [configuration parameter]({{ site.baseurl
-}}/documentation/agent/configuration.html) (or alternatively,
-*--ca-cert-dir* [command line option]({{ site.baseurl }}/documentation/agent/man/)).
+*ca-cert-file* [configuration parameter](../ FusionInventory_agent/  Configuration/configuration.md) (or alternatively,
+*--ca-cert-dir* [command line option](../ FusionInventory_agent/ Manpage/agent.cfg.md)).
 
 It is recommended to use *ca-cert-file* for using a Certification Authority certificate. The
 certificate should be stored as a \*.pem file.

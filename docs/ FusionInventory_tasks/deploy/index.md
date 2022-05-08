@@ -2,7 +2,7 @@
 
 Package Deployment is both integrated with GLPI via *massive actions* and via the Plugin interface.
 
-![]({../../assets/tasks/deploy/FusionInventoryMain.png)
+![](../../assets/tasks/deploy/FusionInventoryMain.png)
 
 1.  Task Management is available via the FusionInventory dropdown. This is mostly used to deploy packages, but can be used
     for other tasks.
@@ -52,7 +52,7 @@ If you use "move" command, use "*" in case from if the agent get the file from G
 
 ### Task Management (Normal)
 
-Please see the [task creation]({{ site.baseurl }}/documentation/fi4g/tasks.html) page.
+Please see the [task creation](../../ FusionInventory_for_GLPI/Advanced/tasks.md) page.
 
 #### Creating a deployment task
 

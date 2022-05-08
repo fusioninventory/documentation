@@ -33,9 +33,8 @@ simple identification.
 * If no match is found, various heuristics are performed
 in order to identify the device, with lower reliability.
 
-Discovered devices are then reported to the GLPI servers, and [import
-rules](../fi4g/importrules.html) are applied. Devices not matching any import
-criteria will be kept in a server list of ignored devices.
+Discovered devices are then reported to the GLPI servers, and 
+[import rules](../ FusionInventory_for_GLPI/Advanced/importrules.md) are applied. Devices not matching any import criteria will be kept in a server list of ignored devices.
 
 ## Running
 
