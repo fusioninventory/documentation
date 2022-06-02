@@ -45,3 +45,10 @@ using its OID (.1.3.6.1.2.1.1.2.0), or with either
 [fusioninventory-netinventory](../ Manpage/fusioninventory-netinventory.md) or
 [fusioninventory-netdiscovery](../ Manpage/fusioninventory-netdiscovery.md) command-line
 tools, with --debug option.
+
+## Where update the database?
+
+This database is managed in one of our repositories on Github.
+
+You can access it [here](https://github.com/fusioninventory/sysobject.ids) and the instructions are on home page of the repository to contribute.
+
