@@ -2,4 +2,4 @@
 
 
 FusionInventory is maintained with [Git](http://git-scm.com/). Our sources are
-on [Github](http://github.com/fusioinventory/).
+on [Github](https://github.com/fusioninventory/).
