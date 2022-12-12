@@ -29,7 +29,7 @@ At this point, you may have some missing required modules. See [dependencies](#d
 section for installing them. Once this is done, run the same command again:
 
 ``` shell
-$> perl Makefile.Pl
+$> perl Makefile.PL
 ```
 
 This time the execution should success and you can finish the installation.
