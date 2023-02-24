@@ -1,6 +1,6 @@
 
 
-Find the documentation [here](https://fusioninventory.org/documentation/)  
+Find the documentation [here](https://documentation.fusioninventory.org/)
 
 ## Run mkdocs in dev mode
 

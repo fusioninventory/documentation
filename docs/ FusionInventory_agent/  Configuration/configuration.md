@@ -42,4 +42,4 @@ See [agent.cfg man page](../ Manpage/agent.cfg.md) for full parameters list.
 
 All configuration parameters can be overriden by command-line options.
 
-See various executable [man pages](../ Manpage/) for full options list.
+See various executable [man pages](../../ Manpage/) for full options list.
