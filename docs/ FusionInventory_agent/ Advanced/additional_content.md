@@ -3,7 +3,7 @@
 ## Additional content
 
 You can use *additional-content* [configuration parameter](../  Configuration/configuration.md) 
-(alternatively, *--additional-content* [command-line options](../ Manpage/)) to inject arbitary XML content into
+(alternatively, *--additional-content* [command-line options](../../ Manpage/)) to inject arbitary XML content into
 inventory result.
 
 For instance, to add some manually installed software, unknown from the
