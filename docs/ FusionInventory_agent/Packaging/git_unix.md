@@ -25,7 +25,7 @@ CPAN Terminal> install XML::TreePP
 
 ### From an archive file
 
-You can download latest git content as a .tar.gz file from [github web interface](https://github.com/fusioninventory/fusioninventory-agent/downloads).
+You can download latest git content as a .tar.gz file from [github web interface](https://github.com/fusioninventory/fusioninventory-agent/releases).
 
 ### From git repository
 
