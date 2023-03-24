@@ -6,6 +6,91 @@ repo_url: 'https://github.com/fusioninventory/documentation'
 
 copyright: Copyright © Fusioninventory 2022
 
+nav:
+  - Home: 
+    - index.md
+    - General/a_bigpicture.md
+    - General/b_faq.md
+    - General/c_documentation.md
+  - FusionInventory Agent:
+    - Installation:
+      - AIX: FusionInventory_agent/installation/aix.md
+      - Android: FusionInventory_agent/installation/android.md
+      - FreeBSD: FusionInventory_agent/installation/freebsd.md
+      - From source: FusionInventory_agent/installation/source.md
+      - HP-UX: FusionInventory_agent/installation/hpux.md
+      - "Linux: Debian & Ubuntu": FusionInventory_agent/installation/linux/deb.md
+      - "Linux: Fedora": FusionInventory_agent/installation/linux/fedora.md
+      - "Linux: Gentoo": FusionInventory_agent/installation/linux/gentoo.md
+      - "Linux: Mageia": FusionInventory_agent/installation/linux/mageia.md
+      - "Linux: RHEL & Centos & RHEL clones": FusionInventory_agent/installation/linux/rhel.md
+      - OS X: FusionInventory_agent/installation/osx.md
+      - Solaris:
+        - FusionInventory_agent/installation/solaris/discussion.md
+        - FusionInventory_agent/installation/solaris/solaris.md
+      - Windows: FusionInventory_agent/installation/windows/index.md
+    - Configuration:
+      - FusionInventory_agent/configuration/configuration.md
+      - FusionInventory_agent/configuration/network_less.md
+      - FusionInventory_agent/configuration/usage.md
+    - Run agent:
+      - FusionInventory_agent/run agent/cron.md
+      - FusionInventory_agent/run agent/launch_the_agent.md
+    - Advanced:
+      - FusionInventory_agent/advanced/additional_content.md
+      - FusionInventory_agent/advanced/database.md
+    - Manpage:
+      - FusionInventory_agent/manpage/agent.cfg.md
+      - FusionInventory_agent/manpage/fusioninventory-agent.md
+      - FusionInventory_agent/manpage/fusioninventory-esx.md
+      - FusionInventory_agent/manpage/fusioninventory-injector.md
+      - FusionInventory_agent/manpage/fusioninventory-inventory.md
+      - FusionInventory_agent/manpage/fusioninventory-netdiscovery.md
+      - FusionInventory_agent/manpage/fusioninventory-netinventory.md
+      - FusionInventory_agent/manpage/fusioninventory-wakeonlan.md
+      - FusionInventory_agent/manpage/fusioninventory-win32-service.md
+    - Packaging:
+      - FusionInventory_agent/packaging/experimental_windows_installer.md
+      - FusionInventory_agent/packaging/git_unix.md
+      - FusionInventory_agent/packaging/git_windows.md
+      - FusionInventory_agent/packaging/release_process.md
+  - FusionInventory for GLPI:
+    - Installation:
+      - FusionInventory_for_GLPI/installation.md
+      - FusionInventory_for_GLPI/update.md
+      - FusionInventory_for_GLPI/cron.md
+    - DMZ:
+      - Inventory in DMZ: FusionInventory_for_GLPI/dmz/index.md
+    - Tasks:
+      - FusionInventory_tasks/collect.md
+      - FusionInventory_tasks/networkdiscovery.md
+      - FusionInventory_tasks/networkinventory.md
+      - FusionInventory_tasks/updateagentwithdeploytask.md
+      - Deploy:
+        - FusionInventory_tasks/deploy/index.md
+        - FusionInventory_tasks/deploy/deploy_self-service.md
+        - FusionInventory_tasks/deploy/deploymirrors.md
+        - FusionInventory_tasks/deploy/exportimportpackages.md
+      - FusionInventory_tasks/esxinventory/index.md
+    - Advanced:
+      - FusionInventory_for_GLPI/advanced/importrules.md
+      - FusionInventory_for_GLPI/advanced/tasks.md
+  - Security: security.md
+  - Developers:
+    - Advanced_topics/dev/index.md
+    - Advanced_topics/dev/git.md
+    - Advanced_topics/dev/pluginglpi_unit_test.md
+    - Protocols:
+      - Inventory: Advanced_topics/dev/spec/protocol/inventory.md
+      - Network discovery: Advanced_topics/dev/spec/protocol/netdiscovery.md
+      - Network inventory: Advanced_topics/dev/spec/protocol/netinventory.md
+      - Collect: Advanced_topics/dev/spec/protocol/collect.md
+      - Deploy: Advanced_topics/dev/spec/protocol/deploy.md
+      - ESX: Advanced_topics/dev/spec/protocol/esx.md
+      - Wake-On-Lan: Advanced_topics/dev/spec/protocol/wakeonlan.md
+
+      
+
 markdown_extensions:
   - toc:
       permalink: true
@@ -48,6 +133,9 @@ theme:
   name: material
   features:
     - navigation.top
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
     - content.code.annotate # (1)
   logo: assets/logo_without_text.png
   favicon: assets/favicon.png

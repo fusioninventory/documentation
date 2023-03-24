@@ -37,12 +37,12 @@ Module-specific communication protocols:
 
 ### Release process
 
-* [Release process](../../ FusionInventory_agent/Packaging/release_process.md)
+* [Release process](../../FusionInventory_agent/packaging/release_process.md)
 
 ### Get the sources
 
-* [Source](../../ FusionInventory_agent/   Installation/from source/source.md)
-* Git: [UNIX](../../ FusionInventory_agent/Packaging/git_unix.md), [Windows](../../ FusionInventory_agent/Packaging/git_windows.md)
+* [Source](../../FusionInventory_agent/installation/source.md)
+* Git: [UNIX](../../FusionInventory_agent/packaging/git_unix.md), [Windows](../../FusionInventory_agent/packaging/git_windows.md)
 
 ## Plugin FusionInventory for GLPI
 
