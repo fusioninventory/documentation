@@ -1,5 +1,5 @@
 :root {
-    --md-primary-fg-color: rgb(29, 150, 243);
+    --md-primary-fg-color: #5e616c;
     --md-primary-fg-color--light: rgb(29, 150, 243);
     --md-accent-fg-color: rgb(29, 150, 243);
     /* --md-default-fg-color--light: #68d3ff; */
@@ -20,4 +20,8 @@ h1 {
 
 .md-header {
     background-color: #5e616c !important;
+}
+
+.md-nav__link {
+    color: black !important;
 }
