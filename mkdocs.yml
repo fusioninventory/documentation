@@ -137,6 +137,8 @@ theme:
     - navigation.tabs.sticky
     - navigation.sections
     - content.code.annotate # (1)
+    - content.code.copy
+    - content.action.edit
   logo: assets/logo_without_text.png
   favicon: assets/favicon.png
 
