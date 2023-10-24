@@ -23,7 +23,7 @@ It's not complex, you need create a cron on your operating system run the GLPI c
 For Linux, add in _crontab_:
 
 ```
-* * * * * cd /var/www/glpi/front/ && /usr/bin/php cron.php &>/dev/null
+* * * * * cd /var/www/html/glpi/front/ && /usr/bin/php cron.php &>/dev/null
 ```
 
 For windows, create in _Task Scheduler_ all 1 or 5 minutes:
